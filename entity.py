@@ -31,7 +31,7 @@ class Entity(object):
             values_xml += value.to_xml()
         values_xml += self.XML_END(self.XML_ATTRIBUTES)
 
-        return "INSERT INTO {} ({}, {}, {}) VALUES({}, '{}', {})".format(
+        return "INSERT INTO {} ({}, {}, {}) VALUES({}, '{}', XMLType('{}'))".format(
             self.XML_TABLE, self.XML_ID, self.XML_NAME, self.XML_ATTR, self.id, self.name, values_xml
         )
 
